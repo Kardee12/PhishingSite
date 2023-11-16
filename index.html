@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fishing Site</title>
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #000;
+            background-color: white;
+            padding: 20px;
+            z-index: 1000;
+        }
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="popup">
+        <p>Check out this amazing offer!</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <h1>Welcome to the Fishing Site!</h1>
+    <p>Find all you need to know about fishing here.</p>
+
+    <img src="https://media.giphy.com/media/tIk1NLkHzKYBboNhnO/giphy.gif" alt="Fishing GIF">
+
+    <script>
+        function closePopup() {
+            document.querySelector('.popup').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        }
+
+        function showPopup() {
+            document.querySelector('.popup').style.display = 'block';
+            document.querySelector('.overlay').style.display = 'block';
+        }
+
+        // Show the popup at a random time
+        setTimeout(showPopup, Math.random() * 5000); // Adjust time as needed
+    </script>
+
+</body>
+
+</html>
